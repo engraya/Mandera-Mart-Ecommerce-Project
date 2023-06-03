@@ -1,0 +1,171 @@
+{% extends 'store/main2.html' %}
+
+
+
+{% block content %}
+
+<div class="body-content outer-top-xs">
+	<div class="container">
+		<div class="row ">
+			<div class="shopping-cart">
+				<div class="shopping-cart-table ">
+	<div class="table-responsive">
+      
+		<table class="table">
+			<thead>
+				<tr>
+					<th class="cart-romove item">Remove</th>
+					<th class="cart-description item">Image</th>
+					<th class="cart-product-name item">Product Name</th>
+					<th class="cart-qty item">Quantity</th>
+					<th class="cart-qty item">Unit Price</th>
+					<th class="cart-total last-item">Grandtotal</th>
+				</tr>
+			</thead><!-- /thead -->
+            {% for item in items %}
+			<tbody>
+				<tr>
+					<td class="romove-item"><a href="#" title="cancel" class="icon"><i class="fa fa-trash-o"></i></a></td>
+					<td class="cart-image">
+						<a class="entry-thumbnail" href="detail.html">
+						    <img src="{{item.product.imageURL}}" alt="">
+						</a>
+					</td>
+					<td class="cart-product-name-info">
+						<h4 class="cart-product-description"><a href="detail.html">{{item.product.name}}</a></h4>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="rating rateit-small"></div>
+							</div>
+						</div><!-- /.row -->
+					</td>
+					<td class="cart-product-quantity">
+						<div class="quant-input">
+				                <div class="arrows">
+				                  <div><span data-product="{{item.product.id}}" class="chg-quantity update-cart" data-action="add"><i class="icon fa fa-sort-asc"></i></span></div>
+				                  <div><span data-product="{{item.product.id}}" class="chg-quantity update-cart" data-action="remove"><i class="icon fa fa-sort-desc"></i></span></div>
+				                </div>
+				                <input type="text" value="{{item.quantity}}">
+			              </div>
+		            </td>
+					<td class="cart-product-grand-total"><span class="cart-grand-total-price">&#8358 {{item.product.price|floatformat:0}}</span></td>
+					<td class="cart-product-grand-total"><span class="cart-grand-total-price">&#8358 {{item.get_total|floatformat:0}}</span></td>
+				</tr>
+			</tbody><!-- /tbody -->
+            {% endfor %}
+            <tfoot>
+				<tr>
+					<td colspan="7">
+						<div class="shopping-cart-btn">
+							<span class="">
+								<a href="" class="btn btn-upper btn-primary outer-left-xs">Continue Shopping</a>
+								<!-- <a href="#" class="btn btn-upper btn-primary pull-right outer-right-xs">Back to Shop</a> -->
+							</span>
+						</div><!-- /.shopping-cart-btn -->
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+
+	</div>
+
+<div class="col-md-4 col-sm-12 cart-shopping-total">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>
+					<div class="cart-grand-total">
+						Total Items <span class="inner-left-md">{{order.get_cart_items}}</span>
+					</div>
+                    <div class="cart-grand-total">
+						Grand Total<span class="inner-left-md">&#8358 {{order.get_cart_total}}</span>
+					</div>
+				</th>
+
+			</tr>
+		</thead><!-- /thead -->
+		<tbody>
+				<tr>
+					<td>
+						<div class="cart-checkout-btn pull-right">
+							<a href="{% url 'checkout' %}"><button type="submit" class="btn btn-primary checkout-btn">PROCCED TO CHEKOUT</button></a>
+						</div>
+					</td>
+				</tr>
+		</tbody><!-- /tbody -->
+	</table><!-- /table -->
+</div><!-- /.cart-shopping-total -->			</div><!-- /.shopping-cart -->
+		</div> <!-- /.row -->
+		<!-- ============================================== BRANDS CAROUSEL ============================================== -->
+<div id="brands-carousel" class="logo-slider wow fadeInUp">
+
+		<div class="logo-slider-inner">	
+			<div id="brand-slider" class="owl-carousel brand-slider custom-carousel owl-theme">
+				<div class="item m-t-15">
+					<a href="#" class="image">
+						<img data-echo="assets/images/brands/brand1.png" src="assets/images/blank.gif" alt="">
+					</a>	
+				</div><!--/.item-->
+
+				<div class="item m-t-10">
+					<a href="#" class="image">
+						<img data-echo="assets/images/brands/brand2.png" src="assets/images/blank.gif" alt="">
+					</a>	
+				</div><!--/.item-->
+
+				<div class="item">
+					<a href="#" class="image">
+						<img data-echo="assets/images/brands/brand3.png" src="assets/images/blank.gif" alt="">
+					</a>	
+				</div><!--/.item-->
+
+				<div class="item">
+					<a href="#" class="image">
+						<img data-echo="assets/images/brands/brand4.png" src="assets/images/blank.gif" alt="">
+					</a>	
+				</div><!--/.item-->
+
+				<div class="item">
+					<a href="#" class="image">
+						<img data-echo="assets/images/brands/brand5.png" src="assets/images/blank.gif" alt="">
+					</a>	
+				</div><!--/.item-->
+
+				<div class="item">
+					<a href="#" class="image">
+						<img data-echo="assets/images/brands/brand6.png" src="assets/images/blank.gif" alt="">
+					</a>	
+				</div><!--/.item-->
+
+				<div class="item">
+					<a href="#" class="image">
+						<img data-echo="assets/images/brands/brand2.png" src="assets/images/blank.gif" alt="">
+					</a>	
+				</div><!--/.item-->
+
+				<div class="item">
+					<a href="#" class="image">
+						<img data-echo="assets/images/brands/brand4.png" src="assets/images/blank.gif" alt="">
+					</a>	
+				</div><!--/.item-->
+
+				<div class="item">
+					<a href="#" class="image">
+						<img data-echo="assets/images/brands/brand1.png" src="assets/images/blank.gif" alt="">
+					</a>	
+				</div><!--/.item-->
+
+				<div class="item">
+					<a href="#" class="image">
+						<img data-echo="assets/images/brands/brand5.png" src="assets/images/blank.gif" alt="">
+					</a>	
+				</div><!--/.item-->
+		    </div><!-- /.owl-carousel #logo-slider -->
+		</div><!-- /.logo-slider-inner -->
+	
+</div><!-- /.logo-slider -->
+<!-- ============================================== BRANDS CAROUSEL : END ============================================== -->	</div><!-- /.container -->
+</div><!-- /.body-content -->
+
+
+{% endblock content %}

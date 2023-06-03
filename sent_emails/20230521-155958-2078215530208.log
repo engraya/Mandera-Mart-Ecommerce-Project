@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: mandera@django.com
+Date: Sun, 21 May 2023 14:59:58 -0000
+Message-ID: <168468119855.14256.2386389923588208584@Engraya>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/reset/MQ/bok4fx-7219a84dfbae8a1a2e7668c8515babd2/
+
+Your username, in case you’ve forgotten: mandera
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------
