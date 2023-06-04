@@ -27,12 +27,12 @@ def landingPage(request):
 
 @login_required(login_url='loginPage')
 def homePage(request):
-    q = request.GET.get('q', None)
-    items = ''
-    if q is None or q is "":
-        products = Product.objects.all()
-    elif q is not None:
-        products = Product.objects.filter(title_contains=q)
+#     q = request.GET.get('q', None)
+#     items = ''
+#     if q is None or q is "":
+#         products = Product.objects.all()
+#     elif q is not None:
+#         products = Product.objects.filter(title_contains=q)
 
     data = cartData(request)
     cartItems = data['cartItems']
