@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn Webcanteen.wsgi --log-file=-
+web: gunicorn app:app
