@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
+
 
 
 
@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-64&1tmzo9evakj(vu!1$xdy==#h0#g8xw6!z##n88^ek2c9w@*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['manderamart.herokuapp.com']
+ALLOWED_HOSTS = ['manderamart.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -175,7 +175,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 STATIC_URL = "/static/"
-django_heroku.settings(locals())
+
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
