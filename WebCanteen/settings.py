@@ -90,7 +90,7 @@ DATABASES = {
         'PASSWORD': '23d9d481011a2f6c50ac1fe5cef65664ed930226a8c444a277f0a6e9b5cf93f0',
         'HOST': 'ec2-3-232-218-211.compute-1.amazonaws.com',
         'PORT': '5432',
-        'OPTIONS': {'service': 'my_alias'}
+   
     }
 }
 
