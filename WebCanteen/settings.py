@@ -191,8 +191,6 @@ EMAIL_HOST_PASSWORD = '12345mandera'
 
 
 
-heroku config:set DISABLE_COLLECTSTATIC=1
-
 
 
 
