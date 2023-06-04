@@ -53,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'WebCanteen.urls'
@@ -166,6 +167,8 @@ STATICFILES_DIRS = [
 STATIC_URL = "/static/"
 django_heroku.settings(locals())
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 MEDIA_URL = '/images/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/assets/images')
@@ -185,6 +188,10 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'manderamart93@gmail.com'
 EMAIL_HOST_PASSWORD = '12345mandera'
+
+
+
+heroku config:set DISABLE_COLLECTSTATIC=1
 
 
 
