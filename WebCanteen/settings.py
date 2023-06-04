@@ -80,15 +80,25 @@ WSGI_APPLICATION = 'WebCanteen.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'mandera_db',
+#         'USER': 'favourboluwatife',
+#         'PASSWORD': '12345favour',
+#         'HOST': 'database-1.cuzee3fzmnqm.us-west-1.rds.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mandera_db',
-        'USER': 'favourboluwatife',
-        'PASSWORD': '12345favour',
-        'HOST': 'database-1.cuzee3fzmnqm.us-west-1.rds.amazonaws.com',
+        'NAME': 'da7a0ud24ohu4d',
+        'USER': 'wgdqbdtzugcpep',
+        'PASSWORD': '23d9d481011a2f6c50ac1fe5cef65664ed930226a8c444a277f0a6e9b5cf93f0',
+        'HOST': 'ec2-3-232-218-211.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -190,8 +200,6 @@ EMAIL_HOST_USER = 'manderamart93@gmail.com'
 EMAIL_HOST_PASSWORD = '12345mandera'
 
 
-
-heroku config:set DISABLE_COLLECTSTATIC=1
 
 
 
