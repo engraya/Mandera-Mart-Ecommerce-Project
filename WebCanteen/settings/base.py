@@ -12,24 +12,26 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
-
+import django_heroku
+import dj_database_url
+from dotenv import load_dotenv, find_dotenv
 
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-64&1tmzo9evakj(vu!1$xdy==#h0#g8xw6!z##n88^ek2c9w@*'
+# SECRET_KEY = 'django-insecure-64&1tmzo9evakj(vu!1$xdy==#h0#g8xw6!z##n88^ek2c9w@*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = ['manderamart.herokuapp.com', '127.0.0.1']
+# ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'store.apps.StoreConfig',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -83,25 +86,27 @@ WSGI_APPLICATION = 'WebCanteen.wsgi.application'
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'mandera_db',
-#         'USER': 'favourboluwatife',
-#         'PASSWORD': '12345favour',
-#         'HOST': 'database-1.cuzee3fzmnqm.us-west-1.rds.amazonaws.com',
-#         'PORT': '5432',
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'JYhIRBjdn80Rb4nkro01',
+#         'HOST': 'containers-us-west-61.railway.app',
+#         'PORT': '6781',
+   
 #     }
 # }
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'da7a0ud24ohu4d',
-        'USER': 'wgdqbdtzugcpep',
-        'PASSWORD': '23d9d481011a2f6c50ac1fe5cef65664ed930226a8c444a277f0a6e9b5cf93f0',
-        'HOST': 'ec2-3-232-218-211.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+
+#     }
+# }
+load_dotenv(find_dotenv())
+
+DATABASES = {'default' : dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600, ssl_require=False)}
+
 
 
 # Password validation
@@ -163,6 +168,18 @@ AWS_HEADERS = {
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+STATIC_URL = "/static/"
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+MEDIA_URL = '/images/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/assets/images')
+
+
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3BotoStorage'
 
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
@@ -170,18 +187,6 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
 
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
-STATIC_URL = "/static/"
-
-
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-MEDIA_URL = '/images/'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/assets/images')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

@@ -10,10 +10,10 @@ class UserRegistrationForm(UserCreationForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["username"].widget.attrs.update({"class": "form-control unicase-form-control ", "type" : "text", "id" : "exampleInputEmail2", "placeholder" : "Enter your Username",})
-        self.fields["email"].widget.attrs.update({"class": "form-control unicase-form-control", "type" : "email","id" : "exampleInputEmail1", "placeholder" : "Enter your Email",})
-        self.fields["password1"].widget.attrs.update({"class": "form-control unicase-form-control",  "type" : "password", "id" : "exampleInputEmail1", "placeholder" : "Enter your Password", })
-        self.fields["password2"].widget.attrs.update({"class": "form-control unicase-form-control", "type" : "password", "id" : "exampleInputEmail1", "placeholder" : "Confirm your Password",})
+        self.fields["username"].widget.attrs.update({"class": "form-control unicase-form-control text-input ", "type" : "text", "id" : "exampleInputEmail2", "placeholder" : "Enter your Username",})
+        self.fields["email"].widget.attrs.update({"class": "form-control unicase-form-control text-input", "type" : "email","id" : "exampleInputEmail1", "placeholder" : "Enter your Email",})
+        self.fields["password1"].widget.attrs.update({"class": "form-control unicase-form-control text-input",  "type" : "password", "id" : "exampleInputEmail1", "placeholder" : "Enter your Password", })
+        self.fields["password2"].widget.attrs.update({"class": "form-control unicase-form-control text-input", "type" : "password", "id" : "exampleInputEmail1", "placeholder" : "Confirm your Password",})
 
     class Meta:
         model = User
