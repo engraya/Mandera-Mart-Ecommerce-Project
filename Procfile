@@ -1,2 +1,2 @@
 
-web: gunicorn WebCanteen.wsgi
+web: gunicorn webcanteen.wsgi
