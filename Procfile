@@ -1,3 +1,2 @@
 
-
-web: gunicorn WebCanteen.wsgi --log-file -
+web: gunicorn WebCanteen.wsgi
