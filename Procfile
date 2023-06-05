@@ -1,1 +1,3 @@
-web: python manage.py migrate && gunicorn WebCanteen.wsgi
+
+
+web: gunicorn WebCanteen.wsgi --log-file -
