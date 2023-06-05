@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 import django_heroku
 import dj_database_url
-from dotenv import *
+from dotenv import load_dotenv
 
 
 
@@ -105,7 +105,7 @@ WSGI_APPLICATION = 'WebCanteen.wsgi.application'
 
 #     }
 # }
-read_dotenv()
+load_dotenv()
 
 DATABASES = {'default' : dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600, ssl_require=False)}
 
