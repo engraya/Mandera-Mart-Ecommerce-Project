@@ -1,6 +1,6 @@
 import django_on_heroku
+import locale
 from decouple import config
-
 
 from .base import *
 
