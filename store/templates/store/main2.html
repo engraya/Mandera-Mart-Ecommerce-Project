@@ -96,7 +96,7 @@
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-3 logo-holder"> 
           <!-- ============================================================= LOGO ============================================================= -->
-          <div class="logo"> <a href="home.html"> <img id="logo" src="{% static 'images/logo4.png' %}" alt="logo"></a></div>
+          <div class="logo"> <a href=""> <img id="logo" src="{% static 'images/logo4.png' %}" alt="logo"></a></div>
           <!-- /.logo --> 
           <!-- ============================================================= LOGO : END ============================================================= --> </div>
         <!-- /.logo-holder -->
@@ -190,19 +190,18 @@
             <div class="nav-outer">
               <ul class="nav navbar-nav">
                 <li class="active dropdown"> <a href="{% url 'homePage' %}">Shop</a> </li>
-                <li class="active dropdown"> <a href="{% url 'main' %}">All</a> </li>
-                <li class="dropdown"> <a href="{% url 'category' 'Clothes' %}">Clothing</a> </li>
-                <li class="dropdown mega-menu"> 
+                <li class="active dropdown"> <a href="{% url 'homePage' %}">All</a> </li>
+                <li class="dropdown"> <a href="{% url 'category' 'Clothes' %}">Clothings</a> </li>
                 <li class="dropdown hidden-sm"> <a href="{% url 'category' 'Books' %}">Books<span class="menu-label new-menu hidden-xs">new</span> </a> </li>
                 <li class="dropdown hidden-sm"> <a href="{% url 'category' 'Electronics' %}">Electronics<span class="menu-label new-menu hidden-xs">new</span> </a> </li>
                 <li class="dropdown hidden-sm"> <a href="{% url 'category' 'Cosmetics' %}">Cosmetics</a> </li>
                 <li class="dropdown"> <a href="{% url 'category' 'Jewelry' %}">Jewellery</a> </li>
                 <li class="dropdown"> <a href="{% url 'category' 'Shoes' %}">Shoes</a> </li>
-                <li class="dropdown"> <a href="{% url 'category' 'Foods' %}">Foods</a> </li>
+                <li class="dropdown"> <a href="{% url 'category' 'Foods' %}">Foods<span class="menu-label new-menu hidden-xs">new</span> </a> </li>
                 <li class="dropdown"> <a href="{% url 'category' 'Furnitures' %}">Furnitures</a> </li>
                 <li class="dropdown"> <a href="{% url 'category' 'Accessories' %}">Accessories</a> </li>
                 <li class="dropdown"> <a href="{% url 'category' 'Fashion' %}">Fashion</a> </li>
-                <li class="dropdown"> <a href="{% url 'category' 'Parts' %}">Parts</a> </li>
+                <li class="dropdown"> <a href="{% url 'category' 'Parts' %}">Parts<span class="menu-label new-menu hidden-xs">new</span> </a> </li>
               </ul>
               <!-- /.navbar-nav -->
               <div class="clearfix"></div>

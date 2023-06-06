@@ -42,7 +42,6 @@ def homePage(request):
     return render(request, 'store/homePage.html', context)
 
 
-
 class CategoryView(View):
     def get(self, request, val):
         product = Product.objects.filter(category=val)
@@ -53,14 +52,11 @@ class CategoryView(View):
         products = Product.objects.all()
         return render(request, 'store/category.html', locals())
     
-
-
 class CategoryTitle(View):
     def get(self, request, val):
         product = Product.objects.filter(title=val)
         title = Product.objects.filter(category=product[0].category).values('title')
         return render(request, 'store/categoryPage.html', locals())
-
 
 
 @login_required(login_url='loginPage')
@@ -296,7 +292,7 @@ def index(request):
         send_mail(subject, message, email_from, recipient_list)
         res = JsonResponse({'msg': 'Thanks. Subscribed Successfully!'})
         return res
-    return render(request, 'store/feedback.html')
+    return render(request, 'store/newsletter.html')
 
 
 
